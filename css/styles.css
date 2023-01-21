@@ -389,14 +389,25 @@ body {
 
 .modal-close-button {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+
     top: 24px;
     right: 24px;
     border-radius: 50%;
     background: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.modal-close-button .icon{
+
+}
+
 /* Our Qualities */
 
 .qualities {
