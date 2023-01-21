@@ -13,6 +13,7 @@
     --footer-social-logo-color:rgba(255, 255, 255, 0.1);
     --accent-color:#31D0AA;
     --customers-border-color: #8E8F99;
+    --animation-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -38,6 +39,7 @@ p,ul {
 
 .header-style {
     border-bottom: 1px solid #E7E9FC;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .container {
     width: 1152px;
@@ -129,6 +131,10 @@ body {
     margin-left: 40px;
 }
 
+.navigation-list .item{
+    position: relative;
+}
+
 .address {
     display: flex;
     margin-left: auto;
@@ -141,11 +147,21 @@ body {
     margin-left: 40px;
 }
 
-/* .active-page {
-    
-    margin-bottom: -5px;
-    border-bottom: 5px solid var(--logo-style-color);
-} */
+.active-page::after {
+    position: absolute;
+    bottom: -1px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #404BBF;
+    border-radius: 2px;
+}
+
+.active-page{
+    color:currentColor;
+    transition: color 250ms var(--animation-cubic);
+}
 
 .active-page:hover,
 .active-page:focus {
@@ -154,6 +170,7 @@ body {
 
 .other-page{
     color: var(--headline-color);
+    transition: color 250ms var(--animation-cubic);
 }
 .other-page:hover,
 .other-page:focus {
@@ -171,6 +188,8 @@ body {
     line-height: 24px;
     color: var(--secondary-color);
     letter-spacing: 0.02em;
+    color:currentColor;
+    transition: color 250ms var(--animation-cubic);
 }
 .address-item:hover,
 .address-item:focus {
@@ -195,21 +214,8 @@ body {
     padding-top: 96px;
     padding-bottom: 120px;
 }
-.filter-item-first {
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    background-color: var(--button-color);
-    border-style: unset;
-    cursor: pointer;
-}
 
-.filter-item-first:hover,
-.filter-item-first:focus {
-    background-color: var(--logo-style-color);
-}
+
 .filter-item {
     font-family: inherit;
     font-weight: 500;
@@ -219,13 +225,20 @@ body {
     background-color: #F4F4FD;
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    box-shadow: none;
     cursor: pointer;
+    transition: color 250ms var(--animation-cubic), 
+    background-color 250ms var(--animation-cubic),
+    border-color 250ms var(--animation-cubic),
+    box-shadow 250ms var(--animation-cubic);
 }
 
 .filter-item:hover,
 .filter-item:focus {
     color:var(--simple-white);
     background-color: var(--button-color);
+    border-color: var(--button-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filter-list {
@@ -286,9 +299,11 @@ body {
 
 .examples-list .item {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms var(--animation-cubic);
 }
 
-.examples-list .item:hover{
+.examples-list .item:hover,
+.examples-list .item:focus{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -385,6 +400,8 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-style: none;
     border-radius: 4px;
+
+    transition: background-color 250ms var(--animation-cubic);
 }
 .headline-section-button:hover,
 .headline-section-button:focus {
@@ -592,12 +609,16 @@ body {
     
     border-radius: 50%;
     background-color: var(--logo-style-color);
+
+    transition: background-color 250ms var(--animation-cubic);
 }
 
 .social-list-item:hover{
     background-color:var(--button-color);
 }
 .icon-social{
+    width: 16px;
+    height: 16px;
 } 
 
 /* Customers */
@@ -640,6 +661,9 @@ body {
     justify-content: center;
     align-items: center;
     color: var(--customers-border-color);
+    border-color: var(--customers-border-color);
+
+    transition: color 250ms var(--animation-cubic), border-color 250ms var(--animation-cubic) ;
 }
 
 .customers-list .icon{
@@ -687,6 +711,11 @@ body {
     display: flex;
     width: 40px;
     height: 40px;
+    
+    border-radius: 50%;
+    background-color:var(--footer-social-logo-color);
+
+    transition: background-color 250ms var(--animation-cubic);
 }
 
 .footer-social-link{
@@ -695,12 +724,11 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color:var(--footer-social-logo-color)
+    align-items: center;  
 }
 
-.footer-social-list-item:hover{
+.footer-social-list-item:hover,
+.footer-social-list-item:focus{
     background-color: var(--accent-color);
 }
 
