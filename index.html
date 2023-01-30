@@ -38,15 +38,7 @@
             <div class="button">
                 <button type="button" class="headline-section-button" data-modal-open>Order Service</button>
             </div>
-            <div class="backdrop is-hidden" data-modal>
-                <div class="modal">
-                    <button class="modal-close-button" data-modal-close>
-                        <svg class="icon" width="8" height="8">
-                            <use href="./images/icons.svg#icon-cross"></use>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+            
         </section>
         <section class="qualities">
             <h2 class="visually-hidden" >Our Qualities</h2>
@@ -349,6 +341,65 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <h2 class="modal-title">Leave your contacts and we will call you back</h2>
+            <form class="modal-form">
+
+                <div class="input-div">
+                    <label class="modal-label" for="name">Name</label>
+                    
+                    <div class="icon-wrap">
+                        <input type="text" id="name">
+                        <svg class="form-icon" height="18" width="18">
+                            <use href="./images/icons.svg#icon-men"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="input-div">
+                    <label class="modal-label" for="phone">Phone</label>
+
+                    <div class="icon-wrap">
+                        <input type="text" id="phone">
+                        <svg class="form-icon" height="24" width="18">
+                            <use href="./images/icons.svg#icon-phone"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="input-div">
+                    <label class="modal-label" for="email">Email</label>
+
+                    <div class="icon-wrap">
+                        <input type="text" id="email">
+                        <svg class="form-icon" height="24" width="18">
+                            <use href="./images/icons.svg#icon-email"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="input-div">   
+                    <label class="modal-label" for="comment">Comment</label>
+                    <textarea name="" id="comment" cols="30" rows="10" placeholder="Text input"></textarea>
+                </div>
+                
+                <div class="policy-wrap">
+                    <label for="policy">I accept the terms and conditions of the  <a href="" class="policy-link">Privacy Policy</a></label>
+                    <input type="checkbox" value="" id="policy" required>
+                </div>
+
+                <button type="submit">Send</button>
+                </form>
+            <button class="modal-close-button" data-modal-close>
+                <svg class="icon" width="8" height="8">
+                    <use href="./images/icons.svg#icon-cross"></use>
+                </svg>
+            </button>
+
+        </div>
+    </div>
 <script src="./js/modal.js"></script>
 </body>
 </html>
